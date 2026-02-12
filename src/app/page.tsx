@@ -138,19 +138,6 @@ export default function Home() {
           <div className="absolute top-20 right-20 w-96 h-96 bg-accent-purple/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-20 left-10 w-80 h-80 bg-brand-blue/30 rounded-full blur-[100px]" />
 
-          {/* Mobile brain background */}
-          <div className="md:hidden absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute right-[-40px] top-1/2 -translate-y-[45%] w-[340px] h-[290px] opacity-60">
-              <Image
-                src="/images/brain-hero-mobile.jpg"
-                alt=""
-                fill
-                className="object-contain"
-                aria-hidden="true"
-              />
-            </div>
-          </div>
-
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16 grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-[1.1] mb-6">
