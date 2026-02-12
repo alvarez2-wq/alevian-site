@@ -138,6 +138,19 @@ export default function Home() {
           <div className="absolute top-20 right-20 w-96 h-96 bg-accent-purple/20 rounded-full blur-[120px]" />
           <div className="absolute bottom-20 left-10 w-80 h-80 bg-brand-blue/30 rounded-full blur-[100px]" />
 
+          {/* Mobile brain background */}
+          <div className="md:hidden absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute right-[-40px] top-1/2 -translate-y-[45%] w-[340px] h-[290px] opacity-60">
+              <Image
+                src="/images/brain-hero-mobile.jpg"
+                alt=""
+                fill
+                className="object-contain"
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+
           <div className="relative z-10 max-w-7xl mx-auto px-6 py-12 md:py-16 grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-6xl font-bold text-white leading-[1.1] mb-6">
@@ -166,13 +179,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden md:flex justify-center">
-              <div className="relative w-[780px] h-[620px]" style={{ maskImage: "radial-gradient(ellipse 80% 80% at center, black 45%, transparent 75%)", WebkitMaskImage: "radial-gradient(ellipse 80% 80% at center, black 45%, transparent 75%)" }}>
+            <div className="hidden md:block relative">
+              <div className="relative w-[780px] h-[620px]">
                 <Image
                   src="/images/brain-hero.jpg"
                   alt="Brain neuroregeneration"
                   fill
-                  className="object-cover mix-blend-lighten"
+                  className="object-contain mix-blend-screen"
                   priority
                 />
               </div>
