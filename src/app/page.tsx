@@ -167,7 +167,7 @@ export default function Home() {
             </div>
 
             <div className="hidden md:flex justify-center">
-              <div className="relative w-[620px] h-[500px]">
+              <div className="relative w-[620px] h-[500px]" style={{ maskImage: "radial-gradient(ellipse 100% 100% at center, black 50%, transparent 100%)", WebkitMaskImage: "radial-gradient(ellipse 100% 100% at center, black 50%, transparent 100%)" }}>
                 <Image
                   src="/images/brain-hero.jpg"
                   alt="Brain neuroregeneration"
