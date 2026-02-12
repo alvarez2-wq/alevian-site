@@ -166,13 +166,13 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="hidden md:block relative">
-              <div className="relative w-[780px] h-[620px]">
+            <div className="hidden md:flex justify-center">
+              <div className="relative w-[620px] h-[500px]" style={{ maskImage: "radial-gradient(ellipse 70% 70% at center, black 35%, transparent 68%)", WebkitMaskImage: "radial-gradient(ellipse 70% 70% at center, black 35%, transparent 68%)" }}>
                 <Image
                   src="/images/brain-hero.jpg"
                   alt="Brain neuroregeneration"
                   fill
-                  className="object-contain mix-blend-screen"
+                  className="object-contain mix-blend-lighten"
                   priority
                 />
               </div>
