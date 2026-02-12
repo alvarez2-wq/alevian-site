@@ -9,6 +9,7 @@ const NAV_LINKS = [
   { label: "Approach", href: "#approach" },
   { label: "Pipeline", href: "#pipeline" },
   { label: "Publications", href: "#publications" },
+  { label: "GDF11 Science", href: "#gdf11-science" },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];

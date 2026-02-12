@@ -11,6 +11,7 @@ const NAV_LINKS = [
   { label: "Approach", href: "#approach" },
   { label: "Pipeline", href: "#pipeline" },
   { label: "Publications", href: "#publications" },
+  { label: "GDF11 Science", href: "#gdf11-science" },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
@@ -94,6 +95,75 @@ const PUBLICATIONS = [
   { title: "Stroke Journal Publication", img: "/images/publications/stroke-journal.jpg", pdf: "/publications/cohen-et-al-recombinant-gdf11.pdf" },
   { title: "ISC2025 Biomarkers Poster", img: "/images/publications/biomarkers-poster.png", pdf: "/publications/ISC2025-Biomarkers-Poster.pdf" },
   { title: "ISC2025 ICH and TBI Poster", img: "/images/publications/ich-tbi-poster.png", pdf: "/publications/ISC2025-ICH-TBI-Poster.pdf" },
+];
+
+const GDF11_BRAIN = [
+  {
+    title: "GDF11 Rejuvenates Cerebrovascular Structure and Function in an Animal Model of Alzheimer's Disease",
+    authors: "Zhang et al.",
+    journal: "Journal of Alzheimer's Disease",
+    year: 2018,
+    url: "https://doi.org/10.3233/JAD-170474",
+  },
+  {
+    title: "GDF11 Improves Neurobehavioral Recovery and Stimulates Angiogenesis in Rats Subjected to Cerebral Ischemia/Reperfusion",
+    authors: "Ma et al.",
+    journal: "Brain Research",
+    year: 2018,
+    url: "https://www.sciencedirect.com/science/article/abs/pii/S0361923017306007",
+  },
+  {
+    title: "GDF11 Promotes Neurovascular Recovery After Stroke in Mice",
+    authors: "Xiao et al.",
+    journal: "Frontiers in Cellular Neuroscience",
+    year: 2018,
+    url: "https://dx.doi.org/10.3389/fncel.2018.00205",
+  },
+  {
+    title: "Growth Differentiation Factor-11 Supplementation Improves Survival and Promotes Recovery After Ischemic Stroke in Aged Mice",
+    authors: "Hudobenko et al.",
+    journal: "Aging",
+    year: 2020,
+    url: "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7244081/",
+  },
+];
+
+const GDF11_METABOLIC = [
+  {
+    title: "GDF11 Attenuates Development of Type 2 Diabetes via Improvement of Islet \u03B2-Cell Function and Survival",
+    authors: "Li et al.",
+    journal: "Diabetes",
+    year: 2017,
+    url: "http://diabetes.diabetesjournals.org/content/66/7/1914",
+  },
+  {
+    title: "Neuroprotective Potential of GDF11 in Experimental Intracerebral Hemorrhage in Elderly Rats",
+    authors: "Xiao et al.",
+    journal: "Journal of Clinical Neuroscience",
+    year: 2019,
+    url: "https://www.jocn-journal.com/article/S0967-5868(18)31760-0/fulltext",
+  },
+  {
+    title: "GDF11 Improves Angiogenic Function of EPCs in Diabetic Limb Ischemia",
+    authors: "Zhang et al.",
+    journal: "Diabetes",
+    year: 2018,
+    url: "https://doi.org/10.2337/db17-1583",
+  },
+  {
+    title: "Systemic GDF11 Stimulates the Secretion of Adiponectin and Induces a Calorie Restriction-Like Phenotype in Aged Mice",
+    authors: "Katsimpardi et al.",
+    journal: "Aging Cell",
+    year: 2019,
+    url: "https://doi.org/10.1111/acel.13038",
+  },
+  {
+    title: "Exogenous GDF11, but Not GDF8, Reduces Body Weight and Improves Glucose Homeostasis in Mice",
+    authors: "Walker, RG et al.",
+    journal: "Scientific Reports",
+    year: 2020,
+    url: "https://www.nature.com/articles/s41598-020-61443-y",
+  },
 ];
 
 const INDICATIONS = [
@@ -431,6 +501,103 @@ export default function Home() {
                 </div>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── GDF11 Science ── */}
+      <section id="gdf11-science" className="py-24">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold uppercase tracking-widest text-brand-red mb-3">
+              GDF11 Science
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+              Peer-Reviewed Research
+            </h2>
+            <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+              A growing body of published research demonstrates GDF11&apos;s potential to promote neuroregeneration, improve stroke recovery, and address metabolic disease.
+            </p>
+          </div>
+
+          {/* Brain / Neurological */}
+          <div className="mb-16">
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 rounded-full bg-brand-blue/10 flex items-center justify-center">
+                <svg className="w-5 h-5 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714a2.25 2.25 0 00.659 1.591L19 14.5M14.25 3.104c.251.023.501.05.75.082M19 14.5l-1.47 4.306a2.25 2.25 0 01-2.133 1.544H8.603a2.25 2.25 0 01-2.134-1.544L5 14.5m14 0H5" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900">Brain &amp; Neurological Recovery</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {GDF11_BRAIN.map((paper) => (
+                <a
+                  key={paper.title}
+                  href={paper.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex gap-4 p-5 bg-white rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-blue/30 transition"
+                >
+                  <div className="shrink-0 w-10 h-10 rounded-lg bg-brand-blue/5 flex items-center justify-center mt-0.5">
+                    <svg className="w-5 h-5 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-slate-900 group-hover:text-brand-blue transition-colors leading-snug mb-1">
+                      {paper.title}
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      {paper.authors} &middot; <span className="italic">{paper.journal}</span>, {paper.year}
+                    </p>
+                  </div>
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-brand-blue shrink-0 mt-1 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Metabolic Disease */}
+          <div>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="w-10 h-10 rounded-full bg-accent-green/10 flex items-center justify-center">
+                <svg className="w-5 h-5 text-accent-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <path d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-slate-900">Metabolic &amp; Age-Related Disease</h3>
+            </div>
+            <div className="grid md:grid-cols-2 gap-4">
+              {GDF11_METABOLIC.map((paper) => (
+                <a
+                  key={paper.title}
+                  href={paper.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex gap-4 p-5 bg-white rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-accent-green/30 transition"
+                >
+                  <div className="shrink-0 w-10 h-10 rounded-lg bg-accent-green/5 flex items-center justify-center mt-0.5">
+                    <svg className="w-5 h-5 text-accent-green" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+                    </svg>
+                  </div>
+                  <div className="min-w-0">
+                    <p className="text-sm font-semibold text-slate-900 group-hover:text-accent-green transition-colors leading-snug mb-1">
+                      {paper.title}
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      {paper.authors} &middot; <span className="italic">{paper.journal}</span>, {paper.year}
+                    </p>
+                  </div>
+                  <svg className="w-4 h-4 text-slate-400 group-hover:text-accent-green shrink-0 mt-1 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
