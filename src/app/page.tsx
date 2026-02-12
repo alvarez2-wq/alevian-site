@@ -346,6 +346,7 @@ export default function Home() {
             </h2>
           </div>
 
+          {/* Desktop phase labels */}
           <div className="hidden md:grid grid-cols-[200px_1fr] gap-4 mb-4 text-xs font-semibold uppercase tracking-wider text-slate-500">
             <div>Indication</div>
             <div className="grid grid-cols-4 text-center">
@@ -354,6 +355,13 @@ export default function Home() {
               <span>Phase I</span>
               <span>Phase II/III</span>
             </div>
+          </div>
+          {/* Mobile phase labels */}
+          <div className="md:hidden grid grid-cols-4 text-center mb-3 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+            <span>Disc.</span>
+            <span>Preclin.</span>
+            <span>Ph I</span>
+            <span>Ph II/III</span>
           </div>
 
           <div className="space-y-4">
