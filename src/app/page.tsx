@@ -244,6 +244,7 @@ export default function Home() {
                   alt="Brain neuroregeneration"
                   fill
                   className="object-contain mix-blend-lighten"
+                  sizes="620px"
                   priority
                 />
               </div>
