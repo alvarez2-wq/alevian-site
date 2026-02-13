@@ -201,9 +201,91 @@ const INDICATIONS = [
 
 /* ─── Page ────────────────────────────────────────────────────────── */
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Alevian",
+  url: "https://alevian.bio",
+  description:
+    "Preclinical-stage biotechnology company developing GDF11-based regenerative therapeutics for stroke and neurological disease. Lead candidate ALE-001 targets a $14 billion US market in acute ischemic stroke with a 72-hour treatment window.",
+  foundingDate: "2024",
+  industry: "Biotechnology",
+  email: "luis@alevian.bio",
+  sameAs: [],
+  knowsAbout: [
+    "GDF11",
+    "Stroke Therapeutics",
+    "Neuroregeneration",
+    "Regenerative Medicine",
+    "Neuroprotection",
+    "Traumatic Brain Injury",
+    "Intracerebral Hemorrhage",
+    "Preclinical Drug Development",
+    "Phase I Clinical Trials",
+    "Neurology Pipeline",
+  ],
+  member: [
+    {
+      "@type": "Person",
+      name: "Seb Giwa PhD",
+      jobTitle: "Executive Chairman",
+    },
+    {
+      "@type": "Person",
+      name: "Tony Sandrasagra PhD",
+      jobTitle: "Chief Science Officer",
+    },
+    {
+      "@type": "Person",
+      name: "David Hoey",
+      jobTitle: "Executive Advisor",
+    },
+  ],
+};
+
+const medicalJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  name: "Alevian",
+  url: "https://alevian.bio",
+  description:
+    "Developing ALE-001, a recombinant GDF11 therapeutic for acute ischemic stroke with a 72-hour treatment window. Addressing an unmet medical need with no approved therapies in the acute stroke setting.",
+  medicalSpecialty: "Neurology",
+};
+
+const investmentJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ResearchProject",
+  name: "ALE-001 Stroke Therapeutics Program",
+  description:
+    "Preclinical regenerative therapeutic targeting the GDF11 pathway for acute ischemic stroke. 72-hour treatment window vs 4.5 hours for current standard of care. $14 billion addressable US market. Backed by Harvard research from Lee Rubin, Amy Wagers, and Rich Lee laboratories.",
+  url: "https://alevian.bio/#pipeline",
+  funder: {
+    "@type": "Organization",
+    name: "Alevian",
+  },
+  sponsor: {
+    "@type": "Organization",
+    name: "Alevian",
+  },
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(investmentJsonLd) }}
+      />
+
       {/* ── Navigation ── */}
       <NavBar />
 
