@@ -102,7 +102,22 @@ const PUBLICATIONS = [
   { title: "Mendelian Randomization Summary of GDF11", img: "/images/publications/mr-summary.webp", pdf: "/publications/GDF11-MR-Summary-Alevian.pdf" },
 ];
 
-const GDF11_BRAIN = [
+const GDF11_BRAIN: {
+  title: string;
+  authors: string;
+  journal: string;
+  year: number;
+  url: string;
+  badge?: string;
+}[] = [
+  {
+    title: "Identification of Novel Therapeutic Targets for Cognitive Performance and Associations with Brain Health",
+    authors: "Zhang, Liu et al.",
+    journal: "Translational Psychiatry",
+    year: 2025,
+    url: "https://doi.org/10.1038/s41398-025-03437-w",
+    badge: "Mendelian Randomization Study",
+  },
   {
     title: "GDF11 Rejuvenates Cerebrovascular Structure and Function in an Animal Model of Alzheimer's Disease",
     authors: "Zhang et al.",
@@ -626,7 +641,7 @@ export default function Home() {
                   href={paper.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex gap-4 p-5 bg-white rounded-xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-brand-blue/30 transition"
+                  className={`group flex gap-4 p-5 bg-white rounded-xl border shadow-sm hover:shadow-md transition ${paper.badge ? "border-brand-blue/40 ring-1 ring-brand-blue/10" : "border-slate-200/80 hover:border-brand-blue/30"}`}
                 >
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-brand-blue/5 flex items-center justify-center mt-0.5">
                     <svg className="w-5 h-5 text-brand-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -634,6 +649,11 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="min-w-0">
+                    {paper.badge && (
+                      <span className="inline-block text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-brand-blue/10 text-brand-blue mb-1.5">
+                        {paper.badge}
+                      </span>
+                    )}
                     <p className="text-sm font-semibold text-slate-900 group-hover:text-brand-blue transition-colors leading-snug mb-1">
                       {paper.title}
                     </p>
