@@ -1,7 +1,11 @@
 import Image from "next/image";
-import Carousel from "@/components/Carousel";
+import dynamic from "next/dynamic";
 import AlevianLogo from "@/components/AlevianLogo";
 import NavBar from "@/components/NavBar";
+
+const Carousel = dynamic(() => import("@/components/Carousel"), {
+  loading: () => <div className="min-h-[480px] bg-navy" />,
+});
 
 /* ─── Data ────────────────────────────────────────────────────────── */
 
