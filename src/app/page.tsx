@@ -95,6 +95,7 @@ const PUBLICATIONS = [
   { title: "Stroke Journal Publication", img: "/images/publications/stroke-journal.jpg", pdf: "/publications/cohen-et-al-recombinant-gdf11.pdf" },
   { title: "ISC2025 Biomarkers Poster", img: "/images/publications/biomarkers-poster.png", pdf: "/publications/ISC2025-Biomarkers-Poster.pdf" },
   { title: "ISC2025 ICH and TBI Poster", img: "/images/publications/ich-tbi-poster.png", pdf: "/publications/ISC2025-ICH-TBI-Poster.pdf" },
+  { title: "Mendelian Randomization Summary of GDF11", img: "/images/publications/mr-summary.png", pdf: "/publications/GDF11-MR-Summary-Alevian.pdf" },
 ];
 
 const GDF11_BRAIN = [
@@ -473,7 +474,7 @@ export default function Home() {
               Publications &amp; Poster Presentations
             </h2>
           </div>
-          <div className="grid sm:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {PUBLICATIONS.map((pub) => (
               <a
                 key={pub.title}
@@ -700,7 +701,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-end gap-6">
               <AlevianLogo height={48} dark />
-              <div className="flex flex-wrap justify-end gap-x-6 gap-y-2">
+              <div className="flex flex-wrap justify-end gap-x-4 gap-y-2">
                 {NAV_LINKS.map((l) => (
                   <a
                     key={l.href}
