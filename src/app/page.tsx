@@ -78,7 +78,7 @@ const PIPELINE = [
 const LEADERSHIP = [
   { name: "Seb Giwa PhD", role: "Executive Chairman", img: "/images/team/seb-giwa.webp" },
   { name: "Tony Sandrasagra PhD", role: "Chief Science Officer", img: "/images/team/tony-sandrasagra.webp" },
-  { name: "David Hoey", role: "Executive Advisor", img: "/images/team/david-hoey.png" },
+  { name: "David Hoey", role: "Executive Advisor", img: "/images/team/david-hoey.webp" },
 ];
 
 const ADVISORS = [
@@ -87,15 +87,15 @@ const ADVISORS = [
   { name: "Rich Lee MD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/rich-lee.webp" },
   { name: "Steven Cramer, MD", role: "Professor Neurology, UCLA; Medical Director, California Rehabilitation Institute", img: "/images/advisory/steven-cramer.webp" },
   { name: "Seth Finklestein, MD", role: "Mass General Hospital, Harvard Medical School", img: "/images/advisory/seth-finklestein.webp" },
-  { name: "Rajiv Ratan MD, PhD", role: "CEO, Burke Neurological Institute; Professor Neurology, Weill Cornell Medicine", img: "/images/advisory/rajiv-ratan.jpg" },
+  { name: "Rajiv Ratan MD, PhD", role: "CEO, Burke Neurological Institute; Professor Neurology, Weill Cornell Medicine", img: "/images/advisory/rajiv-ratan.webp" },
   { name: "Mark Leslie", role: "Managing Director, Leslie Ventures, Stanford GSB", img: "/images/advisory/mark-leslie.webp" },
 ];
 
 const PUBLICATIONS = [
-  { title: "Stroke Journal Publication", img: "/images/publications/stroke-journal.jpg", pdf: "/publications/cohen-et-al-recombinant-gdf11.pdf" },
-  { title: "ISC2025 Biomarkers Poster", img: "/images/publications/biomarkers-poster.png", pdf: "/publications/ISC2025-Biomarkers-Poster.pdf" },
-  { title: "ISC2025 ICH and TBI Poster", img: "/images/publications/ich-tbi-poster.png", pdf: "/publications/ISC2025-ICH-TBI-Poster.pdf" },
-  { title: "Mendelian Randomization Summary of GDF11", img: "/images/publications/mr-summary.png", pdf: "/publications/GDF11-MR-Summary-Alevian.pdf" },
+  { title: "Stroke Journal Publication", img: "/images/publications/stroke-journal.webp", pdf: "/publications/cohen-et-al-recombinant-gdf11.pdf" },
+  { title: "ISC2025 Biomarkers Poster", img: "/images/publications/biomarkers-poster.webp", pdf: "/publications/ISC2025-Biomarkers-Poster.pdf" },
+  { title: "ISC2025 ICH and TBI Poster", img: "/images/publications/ich-tbi-poster.webp", pdf: "/publications/ISC2025-ICH-TBI-Poster.pdf" },
+  { title: "Mendelian Randomization Summary of GDF11", img: "/images/publications/mr-summary.webp", pdf: "/publications/GDF11-MR-Summary-Alevian.pdf" },
 ];
 
 const GDF11_BRAIN = [
@@ -240,7 +240,7 @@ export default function Home() {
             <div className="hidden md:flex justify-center">
               <div className="relative w-[620px] h-[500px]" style={{ maskImage: "radial-gradient(ellipse 70% 70% at center, black 35%, transparent 68%)", WebkitMaskImage: "radial-gradient(ellipse 70% 70% at center, black 35%, transparent 68%)" }}>
                 <Image
-                  src="/images/brain-hero.jpg"
+                  src="/images/brain-hero.webp"
                   alt="Brain neuroregeneration"
                   fill
                   className="object-contain mix-blend-lighten"
@@ -488,8 +488,9 @@ export default function Home() {
                     src={pub.img}
                     alt={pub.title}
                     fill
+                    loading="lazy"
                     className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 640px) 100vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
                 </div>
                 <div className="p-4 flex items-center justify-between">
@@ -622,6 +623,7 @@ export default function Home() {
                     src={person.img}
                     alt={person.name}
                     fill
+                    loading="lazy"
                     className="object-cover"
                     sizes="160px"
                   />
@@ -653,6 +655,7 @@ export default function Home() {
                     src={a.img}
                     alt={a.name}
                     fill
+                    loading="lazy"
                     className="object-cover"
                     sizes="112px"
                   />
