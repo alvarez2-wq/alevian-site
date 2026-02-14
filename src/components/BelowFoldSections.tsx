@@ -603,7 +603,7 @@ export default function BelowFoldSections() {
         </div>
         <div className="border-t border-white/10 py-6">
           <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
-            <span>&copy; 2025 Alevian. All rights reserved. Build 14:55:00 || 14FEB26</span>
+            <span>&copy; 2025 Alevian. All rights reserved. Build 17:00:42 || 14FEB26</span>
             <span>Stroke Therapeutics &amp; Neuroregeneration</span>
           </div>
         </div>
