@@ -1,13 +1,10 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import NavBar from "@/components/NavBar";
+import BelowFoldSections from "@/components/BelowFoldSections";
 
 const Carousel = dynamic(() => import("@/components/Carousel"), {
   loading: () => <div className="min-h-[480px] bg-navy" />,
-});
-
-const BelowFoldSections = dynamic(() => import("@/components/BelowFoldSections"), {
-  loading: () => <div className="min-h-screen" />,
 });
 
 /* ─── Above-fold data only ────────────────────────────────────────── */
