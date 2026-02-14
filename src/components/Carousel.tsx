@@ -284,7 +284,7 @@ export default function Carousel() {
       {/* Prev / Next */}
       <button
         onClick={() => emblaApi?.scrollPrev()}
-        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/5 hover:bg-black/10 backdrop-blur flex items-center justify-center text-slate-600 transition"
+        className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white/90 flex items-center justify-center text-slate-600 transition"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M15 18l-6-6 6-6" />
@@ -292,7 +292,7 @@ export default function Carousel() {
       </button>
       <button
         onClick={() => emblaApi?.scrollNext()}
-        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-black/5 hover:bg-black/10 backdrop-blur flex items-center justify-center text-slate-600 transition"
+        className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white/90 flex items-center justify-center text-slate-600 transition"
       >
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M9 18l6-6-6-6" />

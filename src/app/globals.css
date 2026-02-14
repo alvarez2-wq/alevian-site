@@ -42,13 +42,25 @@ body {
 .hero-gradient {
   background: linear-gradient(135deg, #0a1628 0%, #132041 25%, #1a3a6b 50%, #2d1b69 75%, #0a1628 100%);
   background-size: 300% 300%;
+  will-change: background-position;
   animation: gradientShift 12s ease infinite;
+}
+/* Disable heavy gradient animation on mobile for Safari perf */
+@media (max-width: 767px) {
+  .hero-gradient {
+    background: linear-gradient(135deg, #0a1628 0%, #132041 40%, #1a3a6b 100%);
+    background-size: 100% 100%;
+    animation: none;
+    will-change: auto;
+  }
 }
 
 /* Pipeline bar gradient */
 .pipeline-bar {
   background: linear-gradient(90deg, #1a3a6b, #7c4dff, #c62828);
   border-radius: 999px;
+  will-change: width;
+  transform: translateZ(0);
 }
 
 /* Carousel */
@@ -77,21 +89,28 @@ body {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.7s ease-out forwards;
+  will-change: opacity, transform;
 }
 
-/* Subtle glass card */
+/* Subtle glass card — no backdrop-filter on mobile for Safari perf */
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 768px) {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+  }
 }
 
 /* Stat card hover */
 .stat-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transform: translateZ(0);
 }
 .stat-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-4px) translateZ(0);
   box-shadow: 0 12px 40px rgba(26, 58, 107, 0.15);
 }
 
