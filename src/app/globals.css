@@ -23,9 +23,7 @@
   --font-mono: var(--font-geist-mono);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Removed scroll-behavior: smooth — causes sluggish scrolling on Safari */
 
 body {
   background: var(--color-background);
