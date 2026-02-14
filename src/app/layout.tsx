@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 const inter = Inter({
@@ -95,7 +96,32 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className={`${inter.variable} antialiased`}>
+        {children}
+
+        {/* LinkedIn Insight Tag */}
+        <Script id="linkedin-partner-id" strategy="afterInteractive">
+          {`
+            _linkedin_partner_id = "8660498";
+            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+          `}
+        </Script>
+        <Script
+          id="linkedin-insight"
+          strategy="afterInteractive"
+          src="https://snap.licdn.com/li.lms-analytics/insight.min.js"
+        />
+        <noscript>
+          <img
+            height="1"
+            width="1"
+            style={{ display: "none" }}
+            alt=""
+            src="https://px.ads.linkedin.com/collect/?pid=8660498&fmt=gif"
+          />
+        </noscript>
+      </body>
     </html>
   );
 }
