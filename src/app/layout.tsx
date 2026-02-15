@@ -11,7 +11,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Alevian | Stroke Therapeutics & Neuroregeneration",
   description:
-    "Alevian is a preclinical-stage biotech developing ALE-001, a GDF11-based regenerative therapeutic for acute ischemic stroke with a 72-hour treatment window. Targeting a $14B US market with no approved therapies. Harvard-backed science, advancing toward Phase I clinical trials.",
+    "Alevian is a preclinical-stage biotech developing ALE-001, a GDF11-based regenerative therapeutic for acute ischemic stroke with a 72-hour treatment window. Targeting a $14B US market with no approved therapies. Harvard-backed science, advancing toward Phase I clinical trials. Series A fundraising.",
   keywords: [
     "Alevian",
     "stroke therapeutics",
@@ -29,9 +29,11 @@ export const metadata: Metadata = {
     "stroke recovery",
     "biotech startup",
     "biotech investment",
+    "biotech investment opportunity",
     "stroke research funding",
     "seed stage biotech",
     "series A biotech",
+    "series A fundraising biotech",
     "preclinical stage therapeutics",
     "neurology pipeline",
     "stroke drug development",
@@ -40,6 +42,16 @@ export const metadata: Metadata = {
     "neuroprotective drug",
     "stroke market opportunity",
     "unmet medical need stroke",
+    "biotech venture capital",
+    "life sciences investment",
+    "healthcare venture capital",
+    "biotech Series A opportunity",
+    "preclinical biotech investment",
+    "neurology investment opportunity",
+    "stroke therapeutic pipeline",
+    "family office biotech",
+    "biotech deal flow",
+    "Harvard biotech spinout",
   ],
   authors: [{ name: "Alevian" }],
   creator: "Alevian",
@@ -49,9 +61,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Alevian | Regenerative Stroke Therapeutics",
+    title: "Alevian | Regenerative Stroke Therapeutics | Series A",
     description:
-      "Preclinical-stage biotech targeting a $14B market in acute stroke. ALE-001 extends the treatment window from 4.5 to 72 hours. Harvard-backed GDF11 science, entering Phase I.",
+      "Preclinical-stage biotech targeting a $14B market in acute stroke. ALE-001 extends the treatment window from 4.5 to 72 hours. Harvard-backed GDF11 science, entering Phase I. Now raising Series A.",
     url: "https://alevian.bio",
     siteName: "Alevian",
     locale: "en_US",
@@ -67,9 +79,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alevian | Regenerative Stroke Therapeutics",
+    title: "Alevian | Regenerative Stroke Therapeutics | Series A",
     description:
-      "Preclinical biotech developing ALE-001 for acute stroke. $14B US market, 72-hour treatment window, Harvard-backed science. Advancing toward Phase I.",
+      "Preclinical biotech developing ALE-001 for acute stroke. $14B US market, 72-hour treatment window, Harvard-backed science. Advancing toward Phase I. Now raising Series A.",
     images: ["/images/og-image.jpg"],
   },
   icons: {
@@ -98,6 +110,21 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
         {children}
+
+        {/* Google Analytics */}
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"
+        />
+        <Script id="google-analytics-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GA_MEASUREMENT_ID');
+          `}
+        </Script>
 
         {/* LinkedIn Insight Tag */}
         <Script id="linkedin-partner-id" strategy="afterInteractive">

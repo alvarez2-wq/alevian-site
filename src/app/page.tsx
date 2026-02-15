@@ -72,6 +72,7 @@ const jsonLd = {
   foundingDate: "2024",
   industry: "Biotechnology",
   email: "luis@alevian.bio",
+  areaServed: "US",
   sameAs: [],
   knowsAbout: [
     "GDF11",
@@ -84,12 +85,24 @@ const jsonLd = {
     "Preclinical Drug Development",
     "Phase I Clinical Trials",
     "Neurology Pipeline",
+    "Biotech Investment",
+    "Series A Fundraising",
+    "Venture Capital Life Sciences",
   ],
   member: [
     { "@type": "Person", name: "Seb Giwa PhD", jobTitle: "Executive Chairman" },
     { "@type": "Person", name: "Tony Sandrasagra PhD", jobTitle: "Chief Science Officer" },
     { "@type": "Person", name: "David Hoey", jobTitle: "Executive Advisor" },
   ],
+  funding: {
+    "@type": "MonetaryGrant",
+    name: "Series A Financing",
+    description: "Series A fundraising round for advancing ALE-001 through Phase I clinical trials for acute ischemic stroke.",
+    funder: {
+      "@type": "Organization",
+      name: "Alevian",
+    },
+  },
 };
 
 const medicalJsonLd = {
@@ -113,6 +126,21 @@ const investmentJsonLd = {
   sponsor: { "@type": "Organization", name: "Alevian" },
 };
 
+const bioChemEntityJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ChemicalSubstance",
+  name: "ALE-001",
+  description:
+    "Recombinant GDF11-based regenerative therapeutic for acute ischemic stroke. Extends the treatment window from 4.5 hours to 72 hours by reducing inflammation, promoting neovascularization, stimulating neurogenesis, and improving functional recovery.",
+  url: "https://alevian.bio/#pipeline",
+  chemicalRole: "Therapeutic",
+  potentialAction: {
+    "@type": "Action",
+    name: "Neuroprotective and regenerative treatment for acute ischemic stroke",
+    target: "Acute Ischemic Stroke",
+  },
+};
+
 /* ─── Page ────────────────────────────────────────────────────────── */
 
 export default function Home() {
@@ -129,6 +157,10 @@ export default function Home() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(investmentJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(bioChemEntityJsonLd) }}
       />
 
       {/* ── Navigation ── */}

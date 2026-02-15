@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path(.*)",
+      "has": [{ "type": "host", "value": "www.alevian.bio" }],
+      "destination": "https://alevian.bio/:path",
+      "permanent": true
+    }
+  ]
+}
