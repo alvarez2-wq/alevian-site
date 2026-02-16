@@ -33,7 +33,7 @@ const ADVISORS = [
   { name: "Amy Wagers PhD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/amy-wagers.webp" },
   { name: "Rich Lee MD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/rich-lee.webp" },
   { name: "Steven Cramer, MD", role: "Professor Neurology, UCLA; Medical Director, California Rehabilitation Institute", img: "/images/advisory/steven-cramer.webp" },
-  { name: "Seth Finklestein, MD", role: "Associate Professor Neurology, Harvard Medical School; Neurologist, Mass General Hospital", img: "/images/advisory/seth-finklestein.webp" },
+  { name: "Seth Finklestein, MD", role: "Neurologist, Mass General Hospital; Former Associate Professor Neurology, Harvard Medical School", img: "/images/advisory/seth-finklestein.webp" },
   { name: "Rajiv Ratan MD, PhD", role: "CEO, Burke Neurological Institute; Professor Neurology, Weill Cornell Medicine", img: "/images/advisory/rajiv-ratan.webp" },
   { name: "Mark Leslie", role: "Managing Director, Leslie Ventures, Stanford GSB", img: "/images/advisory/mark-leslie.webp" },
 ];
