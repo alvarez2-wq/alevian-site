@@ -96,6 +96,14 @@ const GDF11_BRAIN: {
     badge: "Mendelian Randomization Study",
   },
   {
+    title: "Novel Insights into the Pleiotropic Health Effects of Growth Differentiation Factor 11 Gained from Genome-Wide Association Studies in Population Biobanks",
+    authors: "Strosahl, Ye, Pazdro",
+    journal: "BMC Genomics",
+    year: 2024,
+    url: "https://doi.org/10.1186/s12864-024-10710-7",
+    badge: "GWAS / PheWAS Study",
+  },
+  {
     title: "GDF11 Rejuvenates Cerebrovascular Structure and Function in an Animal Model of Alzheimer's Disease",
     authors: "Zhang et al.",
     journal: "Journal of Alzheimer's Disease",
