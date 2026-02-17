@@ -90,9 +90,10 @@ const jsonLd = {
     "Venture Capital Life Sciences",
   ],
   member: [
-    { "@type": "Person", name: "Seb Giwa PhD", jobTitle: "Executive Chairman" },
-    { "@type": "Person", name: "Tony Sandrasagra PhD", jobTitle: "Chief Science Officer" },
+    { "@type": "Person", name: "Sebastian Eriksson Giwa, PhD, MBA", jobTitle: "Chairman & Co-Founder" },
+    { "@type": "Person", name: "Anthony Sandrasagra, PhD", jobTitle: "Chief Scientific Officer & Co-Founder" },
     { "@type": "Person", name: "David Hoey", jobTitle: "Executive Advisor" },
+    { "@type": "Person", name: "Ori S. Cohen, PhD", jobTitle: "Senior Director, Preclinical & Translational Research & Co-Founder" },
   ],
   funding: {
     "@type": "MonetaryGrant",

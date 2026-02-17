@@ -1,5 +1,18 @@
 import Image from "next/image";
 import AlevianLogo from "@/components/AlevianLogo";
+import TeamSection from "@/components/TeamSection";
+import type { TeamMember } from "@/components/TeamSection";
+
+/* ─── Build Timestamp ─────────────────────────────────────────────── */
+
+const BUILD_TIMESTAMP = (() => {
+  const d = new Date();
+  const pad = (n: number) => String(n).padStart(2, "0");
+  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const time = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  const date = `${pad(d.getDate())}:${months[d.getMonth()]}:${String(d.getFullYear()).slice(2)}`;
+  return `Build ${time} || ${date}`;
+})();
 
 /* ─── Data ────────────────────────────────────────────────────────── */
 
@@ -22,20 +35,41 @@ const PIPELINE = [
   { indication: "Metabolic Disease", progress: 22, phase: "Discovery", candidate: "ALE-002" },
 ];
 
-const LEADERSHIP = [
-  { name: "Seb Giwa PhD", role: "Executive Chairman", img: "/images/team/seb-giwa.webp" },
-  { name: "Tony Sandrasagra PhD", role: "Chief Science Officer", img: "/images/team/tony-sandrasagra.webp" },
-  { name: "David Hoey", role: "Executive Advisor", img: "/images/team/david-hoey.webp" },
+const LEADERSHIP: TeamMember[] = [
+  {
+    name: "Sebastian Eriksson Giwa, PhD, MBA",
+    role: "Chairman & Co-Founder",
+    img: "/images/team/seb-giwa.webp",
+    bio: "Dr. Sebastian Eriksson Giwa is Chairman and Co-Founder of Alevian Inc. and an experienced biotech entrepreneur with a strong track record of company formation, capital raising, and strategic execution. A Harvard MBA and Baker Scholar, Dr. Giwa has helped raise more than $250 million from venture capital, strategic partners, and federal funding sources across multiple biotechnology ventures.\n\nHe is currently Founder and CEO of Expanse Bio and Sylvatica Biotech. Previously, he was the founding CEO of Ossium Inc. (now Ossium Health), where he led the company from inception through the buildout of a fully industrialized cGMP manufacturing platform and FDA clearance across multiple clinical indications. Ossium is backed by leading investors including General Catalyst, Village Global, First Round Capital, and Vivo Capital.\n\nDr. Giwa also served as Executive Chairman and Co-Founder of Harvard spin-out Elevian Inc., where he helped lead venture financings and in-license a broad intellectual property portfolio focused on age-related diseases, including stroke, Alzheimer\u2019s disease, and metabolic disorders. Earlier, he was Founding CEO of the Organ Preservation Alliance and a founding executive team member of the American Society of Transplantation\u2019s Organ Preservation and Procurement Community of Practice.\n\nAt Alevian, Dr. Giwa leverages his expertise in capital formation, governance, and strategic growth to support the company\u2019s mission of advancing first-in-class therapies for stroke recovery and regenerative medicine.",
+  },
+  {
+    name: "Anthony Sandrasagra, PhD",
+    role: "Chief Scientific Officer & Co-Founder",
+    img: "/images/team/tony-sandrasagra.webp",
+    bio: "Dr. Anthony Sandrasagra is Chief Scientific Officer and Co-Founder of Alevian Inc., where he leads the company\u2019s scientific strategy and oversees advancement of its therapeutic pipeline toward clinical development. He brings more than 25 years of pharmaceutical and biopharmaceutical R&D experience, with a proven track record of progressing drug programs from target identification through early clinical studies (Phase I/II). Dr. Sandrasagra is a named inventor on more than 20 issued patents and patent applications. Prior to Alevian, Dr. Sandrasagra served as Senior Vice President of R&D at Elevian, where he helped define the company\u2019s research direction and advance its GDF11-focused pipeline for stroke and aging-related diseases.\n\nDr. Sandrasagra has held senior leadership roles across multiple successful biotechnology companies, including VP of R&D at Mesoblast, CSO of Provasculon, and CSO of EpiGenesis Pharmaceuticals. Earlier in his career, he led small-molecule discovery programs at XTL Biopharmaceuticals and as Head of Gene Expression and Protein Sciences at HRPI/HMR/Aventis (now Sanofi), led the Bridgewater NJ site biotechnology function and contributed to drug discovery programs from target identification and screening through to drug candidate selection for the US CNS, Respiratory, and Oncology Disease Groups.\n\nThroughout his career, Dr. Sandrasagra has built and led integrated R&D organizations spanning protein sciences, discovery, preclinical development, toxicology, CMC/manufacturing, biomarker development, and clinical pharmacology. At Alevian, he has assembled a highly experienced team of biotech executives, scientists, and clinical experts to efficiently advance recombinant GDF11 toward clinical proof of concept and value inflection.",
+  },
+  {
+    name: "David Hoey",
+    role: "Executive Advisor",
+    img: "/images/team/david-hoey.webp",
+    bio: "",
+  },
+  {
+    name: "Ori S. Cohen, PhD",
+    role: "Senior Director, Preclinical & Translational Research & Co-Founder",
+    img: "/images/team/ori-cohen.webp",
+    bio: "Dr. Ori S. Cohen is Senior Director of Preclinical & Translational Research and Co-Founder of Alevian Inc., where he leads execution of the company\u2019s preclinical and translational development strategy. He brings more than 20 years of experience in translational medicine, with deep expertise in biomarker discovery, pharmacology, toxicology, and IND-enabling preclinical development.\n\nAt Alevian, Dr. Cohen oversees all preclinical programs, sponsored research, and external CRO and academic collaborations, ensuring disciplined study design, capital efficiency, and alignment with regulatory and clinical objectives. His work spans translational biomarker strategy, pharmacokinetics, biodistribution, dose optimization, toxicology, and the design and execution of disease-relevant in vivo models to guide dose selection and clinical translation. Dr. Cohen integrates scientific rigor with operational execution, helping position Alevian\u2019s programs for efficient progression toward clinical milestones and value creation.\n\nDr. Cohen has extensive hands-on experience designing and executing biochemical and cell-based assays, as well as conducting histological and imaging-based analyses in neuroscience and regenerative medicine. Prior to co-founding Alevian, he was a Senior Scientist at Elevian, where he played a key role in advancing recombinant GDF11 protein therapeutics for stroke recovery. Earlier in his career, he held research and leadership positions at The Scripps Research Institute, SUNY Upstate Medical University, and Massachusetts General Hospital.",
+  },
 ];
 
-const ADVISORS = [
-  { name: "Lee Rubin PhD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/lee-rubin.webp" },
-  { name: "Amy Wagers PhD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/amy-wagers.webp" },
-  { name: "Rich Lee MD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/rich-lee.webp" },
-  { name: "Steven Cramer, MD", role: "Professor Neurology, UCLA; Medical Director, California Rehabilitation Institute", img: "/images/advisory/steven-cramer.webp" },
-  { name: "Seth Finklestein, MD", role: "Neurologist, Mass General Hospital; Former Associate Professor Neurology, Harvard Medical School", img: "/images/advisory/seth-finklestein.webp" },
-  { name: "Rajiv Ratan MD, PhD", role: "CEO, Burke Neurological Institute; Professor Neurology, Weill Cornell Medicine", img: "/images/advisory/rajiv-ratan.webp" },
-  { name: "Mark Leslie", role: "Managing Director, Leslie Ventures, Stanford GSB", img: "/images/advisory/mark-leslie.webp" },
+const ADVISORS: TeamMember[] = [
+  { name: "Rajiv R. Ratan, MD, PhD", role: "CEO, Burke Neurological Institute; Professor Neurology, Weill Cornell Medicine", img: "/images/advisory/rajiv-ratan.webp", bio: "Dr. Rajiv R. Ratan is the Burke Professor of Neurology and Neuroscience at Weill Cornell Medicine and Chief Executive Officer of the Burke Neurological Institute. His research focuses on the molecular programs that enable the brain to respond to injury and promote repair following intracerebral hemorrhage (ICH), ischemic stroke, and chronic stroke.\n\nSince 2003, Dr. Ratan leads the world class efforts at the Burke Neurological Institute dedicated to curing neurological disability after patients have exhausted standard treatment options. His expertise spans both preclinical models and clinical trial development in stroke and spinal cord injury, bringing a uniquely translational perspective to Alevian\u2019s neurorestorative programs." },
+  { name: "Steven C. Cramer, MD", role: "Professor Neurology, UCLA; Medical Director, California Rehabilitation Institute", img: "/images/advisory/steven-cramer.webp", bio: "Dr. Steven C. Cramer is Professor of Neurology and the Susan and David Wilstein Chair in Rehabilitation Medicine at UCLA. He also serves as Medical Director of Research at California Rehabilitation Institute, co-PI of the NIH StrokeNet clinical trials network, and Associate Editor for Neurorehabilitation and Neural Repair.\n\nDr. Cramer\u2019s research focuses on neural repair after central nervous system injury, particularly stroke, with an emphasis on recovery of movement. His work integrates drug therapies, brain stimulation, robotics, cellular therapies, and biomarker-guided rehabilitation strategies. He is the author of more than 350 scientific publications and co-editor of Brain Repair After Stroke. His clinical and translational insights are critical to Alevian\u2019s approach to post-stroke recovery." },
+  { name: "Seth Finklestein, MD", role: "Neurologist, Mass General Hospital; Senior Lecturer, Harvard Medical School", img: "/images/advisory/seth-finklestein.webp", bio: "Dr. Seth Finklestein is a practicing neurologist at Massachusetts General Hospital, Senior Lecturer at Harvard Medical School, and CEO of Recovery Therapeutics, Inc. A recognized authority in ischemic stroke recovery, Dr. Finklestein has spent decades studying growth factors and repair mechanisms in the injured brain.\n\nPreviously, he directed the NIH-funded CNS Growth Factor Research Laboratory at MGH and served as VP and Head of Neuroscience at ViaCell. He also founded Biotrofix, a preclinical CRO. His extensive experience in neurology, translational research, and drug development makes him a key advisor to Alevian\u2019s rGDF11 stroke program." },
+  { name: "Lee Rubin, PhD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/lee-rubin.webp", bio: "Dr. Lee Rubin is Professor of Stem Cell and Regenerative Biology at Harvard University and Director of Translational Medicine at the Harvard Stem Cell Institute. With nearly two decades of CNS drug development experience across industry and academia, Dr. Rubin is a leader in neurodegenerative disease modeling and translational neuroscience.\n\nHis research focuses on developing advanced preclinical systems to discover therapies for neurodegeneration and brain aging. He has held senior roles at Athena Neurosciences, Eisai, and Curis and serves on numerous scientific advisory boards. Dr. Rubin provides Alevian with deep expertise in translational strategy and CNS drug discovery." },
+  { name: "Richard T. Lee, MD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/rich-lee.webp", bio: "Dr. Richard T. Lee is Professor of Stem Cell and Regenerative Biology at Harvard University and Professor of Medicine at Harvard Medical School. He is also Leader of the Cardiovascular Program at the Harvard Stem Cell Institute and a practicing cardiologist at Brigham and Women\u2019s Hospital.\n\nDr. Lee\u2019s research focuses on the molecular mechanisms underlying heart failure, metabolic disease, and aging. His work has been instrumental in understanding how systemic factors influence cardiovascular decline and regenerative capacity, directly informing Alevian\u2019s studies on GDF11 and systemic aging." },
+  { name: "Amy Wagers, PhD", role: "Professor, Stem Cell and Regenerative Biology, Harvard", img: "/images/advisory/amy-wagers.webp", bio: "Dr. Amy Wagers is the Forst Family Professor of Stem Cell and Regenerative Biology at Harvard University and a leading authority on stem cell aging and regeneration. Her research explores how inter-tissue communication and blood-borne factors regulate stem cell function and tissue repair across the lifespan.\n\nDr. Wagers\u2019 pioneering work demonstrated that age-related decline in muscle, heart, and brain function can be reversed through modulation of circulating factors, including GDF11. Her discoveries have helped shape modern understanding of systemic aging and regenerative biology and provide foundational scientific insight for Alevian\u2019s therapeutic strategy." },
+  { name: "Mark Leslie", role: "Managing Director, Leslie Ventures; Lecturer, Stanford GSB", img: "/images/advisory/mark-leslie.webp", bio: "Mark Leslie is Managing Director of Leslie Ventures and a seasoned technology executive, entrepreneur, and investor. He is also a Lecturer in Management at Stanford Graduate School of Business, where he teaches entrepreneurship, ethics, and sales organization.\n\nMr. Leslie was Founder, Chairman, and CEO of Veritas Software, which he led for eleven years, growing it to 6,000 employees and $1.5 billion in annual revenue. Over the past 25 years, he has served on more than 50 public and private boards and currently sits on the boards of Stanford Health Care and the NYU Board of Trustees.\n\nMr. Leslie brings extensive experience in scaling organizations, governance, and strategic leadership to support Alevian\u2019s long-term growth." },
 ];
 
 const PUBLICATIONS = [
@@ -485,73 +519,8 @@ export default function BelowFoldSections() {
         </div>
       </section>
 
-      {/* ── Leadership ── */}
-      <section id="team" className="py-24">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-brand-red mb-3">
-              Team
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Leadership
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-3 gap-10 max-w-4xl mx-auto">
-            {LEADERSHIP.map((person) => (
-              <div key={person.name} className="text-center group">
-                <div className="w-40 h-40 mx-auto mb-5 rounded-full bg-gradient-to-br from-slate-100 to-slate-50 border-2 border-slate-200 overflow-hidden relative">
-                  <Image
-                    src={person.img}
-                    alt={person.name}
-                    fill
-                    loading="lazy"
-                    className="object-cover"
-                    sizes="160px"
-                  />
-                </div>
-                <h3 className="font-bold text-slate-900">{person.name}</h3>
-                <p className="text-sm text-slate-500 mt-1">{person.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Scientific & Medical Advisory Board ── */}
-      <section className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <p className="text-sm font-semibold uppercase tracking-widest text-brand-red mb-3">
-              Advisors
-            </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
-              Scientific &amp; Medical Advisory Board
-            </h2>
-          </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8">
-            {ADVISORS.map((a) => (
-              <div key={a.name} className="text-center">
-                <div className="w-28 h-28 mx-auto mb-4 rounded-full bg-gradient-to-br from-slate-100 to-slate-50 border-2 border-slate-200 overflow-hidden relative">
-                  <Image
-                    src={a.img}
-                    alt={a.name}
-                    fill
-                    loading="lazy"
-                    className="object-cover"
-                    sizes="112px"
-                  />
-                </div>
-                <h3 className="font-semibold text-sm text-slate-900">
-                  {a.name}
-                </h3>
-                <p className="text-xs text-slate-500 mt-1 leading-relaxed">
-                  {a.role}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* ── Leadership + Advisory Board (with bio modals) ── */}
+      <TeamSection leadership={LEADERSHIP} advisors={ADVISORS} />
 
       {/* ── Contact / Footer ── */}
       <footer id="contact" className="bg-navy text-white">
@@ -601,7 +570,7 @@ export default function BelowFoldSections() {
         </div>
         <div className="border-t border-white/10 py-6">
           <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-slate-500">
-            <span>&copy; 2025 Alevian. All rights reserved. Build 14:32:09 || 15FEB26</span>
+            <span>&copy; 2025 Alevian. All rights reserved. &nbsp;|&nbsp; {BUILD_TIMESTAMP}</span>
             <span>Stroke Therapeutics &amp; Neuroregeneration</span>
           </div>
         </div>
