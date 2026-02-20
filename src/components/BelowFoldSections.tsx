@@ -52,7 +52,7 @@ const LEADERSHIP: TeamMember[] = [
     name: "David Hoey",
     role: "Executive Advisor",
     img: "/images/team/david-hoey.webp",
-    bio: "",
+    bio: "David Hoey serves as Executive Advisor to Alevian. David has more than 30 years of executive-level experience, spanning business development, licensing, corporate partnering, and financing for technology companies, and has completed more than $400M in equity and non-dilutive transactions.\n\nMr. Hoey is a Senior Advisor to Vaxxas, where he was CEO from 2012\u20132025, raising more than $200M and establishing partnerships with leaders in global health including Merck, the World Health Organization, the Gates Foundation, and Wellcome Trust, in addition to development contracts with governments and pharma in the US and Europe.\n\nDuring his career, Mr. Hoey has worked in management and leadership roles in the development of small molecule and biologic therapeutics, molecular diagnostic assays and platforms, and analytical instrumentation.",
   },
   {
     name: "Ori S. Cohen, PhD",
