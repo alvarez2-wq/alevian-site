@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Pin the workspace root: this repo is nested under a parent dir that also
+  // has a lockfile, which Turbopack would otherwise pick as the root.
+  turbopack: {
+    root: __dirname,
+  },
   // Redirect old static-export paths and section URLs to the homepage
   async redirects() {
     return [
